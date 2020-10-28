@@ -133,6 +133,27 @@ GC时 ParNew下降，老年代上升
 GC时 年轻代下降，老年代下降，堆使用下降
 ```
 
+##### G1 GC
+```
+- 512m
+java -XX:+UseG1GC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:gc.g1512-1.log GCLogAnalysis
+
+java -XX:+UseG1GC -Xms512m -Xmx512m -XX:+PrintGC -XX:+PrintGCDateStamps -Xloggc:gc.g1512-2.log GCLogAnalysis
+
+- 4G
+java -XX:+UseG1GC -Xms4g -Xmx4g -XX:+PrintGC -XX:+PrintGCDateStamps -Xloggc:gc.g14g-1.log GCLogAnalysis
+```
+
+- 总结
+Young GC
+```
+GC时 堆使用大小下降
+```
+
+- Full GC
+```
+GC时 过程复杂 年轻代和老年代一起清理 堆使用大小下降
+```
 
 
 ## NIO模型于Netty入门
